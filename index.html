@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenneth C. Sheek | Portfolio</title>
+    <title>Kenneth Sheek Technology | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,11 +14,14 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            /* A subtle, visually interesting animated gradient background */
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #111827, #312e81);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #f8fafc;
+            /* Seamless blend background with the logo image, with a subtle grain texture */
+            background-color: #F4F7FB;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px);
+            background-size: 20px 20px, 20px 20px;
+            background-position: center;
+            color: #1e293b;
             height: 100vh;
             overflow: hidden; /* Prevents all scrolling */
             display: flex;
@@ -26,27 +29,25 @@
             position: relative;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Top Left Name */
+        /* Top Left Logo */
         header {
             position: absolute;
             top: 2rem;
             left: 2rem;
         }
 
-        header h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #e2e8f0;
+        .logo-container {
+            width: 320px; /* Matched to a functional size */
+            height: auto;
         }
 
-        /* Center Links Container */
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Center Content with large buttons */
         main {
             flex: 1;
             display: flex;
@@ -58,78 +59,178 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
+            max-width: 1000px;
+            width: 100%;
+            justify-content: center;
         }
 
-        /* Glassmorphism Button Styles */
-        .nav-links a {
+        /* Large Card/Button Styles with preview space */
+        .nav-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 250px;
+            height: 350px;
+            border-radius: 20px;
             text-decoration: none;
-            color: #f8fafc;
-            font-size: 1.25rem;
-            font-weight: 400;
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            color: #1e293b;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            overflow: hidden; /* Keeps image and text contained */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            cursor: pointer;
         }
 
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
-        /* Bottom Footer */
+        /* Top placeholder for future preview images */
+        .preview-placeholder {
+            width: 100%;
+            height: 70%; /* Covers top portion */
+            background-color: rgba(0,0,0,0.05); /* Placeholder grey */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .preview-placeholder span {
+            color: rgba(0,0,0,0.2);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Bottom section for text */
+        .card-text {
+            height: 30%; /* Lower portion */
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Align text to bottom */
+            text-align: center;
+        }
+
+        .card-text h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+        }
+
+        .card-text p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #64748b;
+        }
+
+
+        /* Centered Bottom Footer */
         footer {
             position: absolute;
             bottom: 2rem;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Center horizontally */
             padding: 0 2rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 300;
-            color: #94a3b8;
+            color: #64748b;
         }
 
-        footer a {
-            color: #94a3b8;
+        .footer-line {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-line a {
+            color: #64748b;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        footer a:hover {
-            color: #f8fafc;
+        .footer-line a:hover {
+            color: #1e293b;
         }
 
+        .footer-separator {
+            color: #cbd5e1;
+        }
+
+
         /* Mobile Responsiveness */
+        @media (max-width: 1000px) {
+            .nav-links {
+                gap: 2rem;
+            }
+            .nav-card {
+                width: 200px;
+                height: 300px;
+            }
+        }
+
         @media (max-width: 768px) {
             header {
                 top: 1.5rem;
                 left: 1.5rem;
+            }
+            .logo-container {
+                width: 250px;
             }
             
             .nav-links {
                 flex-direction: column;
                 gap: 1.5rem;
                 width: 100%;
-                max-width: 300px;
+                max-width: 350px;
             }
 
-            .nav-links a {
-                text-align: center;
+            .nav-card {
                 width: 100%;
+                height: 120px; /* Horizontal on mobile */
+                flex-direction: row;
+                border-radius: 12px;
+            }
+
+            .nav-card:hover {
+                transform: translateX(3px); /* Shift sideways instead of up */
+            }
+
+            .preview-placeholder {
+                width: 35%; /* Take up side space */
+                height: 100%;
+                border-bottom: none;
+                border-right: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .card-text {
+                width: 65%;
+                height: 100%;
+                padding: 1rem;
+                justify-content: center;
+                text-align: left;
+            }
+
+            .card-text h2 {
+                font-size: 1.25rem;
             }
 
             footer {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.5rem;
                 bottom: 1.5rem;
+                font-size: 0.85rem;
+            }
+            .footer-line {
+                gap: 1rem;
             }
         }
     </style>
@@ -137,20 +238,47 @@
 <body>
 
     <header>
-        <h1>Kenneth C. Sheek</h1>
+        <div class="logo-container">
+            <img src="logo.png" alt="Kenneth Sheek Technology Logo">
+        </div>
     </header>
 
     <main>
         <div class="nav-links">
-            <a href="resume.html">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="links.html">Links</a>
+            <a href="resume.html" class="nav-card">
+                <div class="preview-placeholder">
+                    <span>IMAGE</span>
+                </div>
+                <div class="card-text">
+                    <h2>Resume</h2>
+                    <p>Professional experience & skills</p>
+                </div>
+            </a>
+            <a href="projects.html" class="nav-card">
+                <div class="preview-placeholder">
+                    <span>IMAGE</span>
+                </div>
+                <div class="card-text">
+                    <h2>Projects</h2>
+                    <p>Featured work & experiments</p>
+                </div>
+            </a>
+            <a href="links.html" class="nav-card">
+                <div class="preview-placeholder">
+                    <span>IMAGE</span>
+                </div>
+                <div class="card-text">
+                    <h2>Links</h2>
+                    <p>Contact & social media</p>
+                </div>
+            </a>
         </div>
     </main>
 
     <footer>
-        <div class="location">Clemmons, NC</div>
-        <div class="email">
+        <div class="footer-line">
+            <span>Clemmons, NC</span>
+            <span class="footer-separator">|</span>
             <a href="mailto:KennethSheek@outlook.com">KennethSheek@outlook.com</a>
         </div>
     </footer>
