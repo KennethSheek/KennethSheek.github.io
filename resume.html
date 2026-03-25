@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Kenneth C. Sheek</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F7FB;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px);
+            background-size: 20px 20px, 20px 20px;
+            background-position: center;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem;
+            /* Scrolling is enabled here, unlike the index page */
+        }
+
+        /* Navigation */
+        .nav-bar {
+            max-width: 850px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .back-btn:hover {
+            color: #0d3b66;
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateX(-4px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Resume Document Container */
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 4rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* Header Section */
+        .resume-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1.5rem;
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0d3b66;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-header p {
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        .resume-header a {
+            color: #0d3b66;
+            text-decoration: none;
+        }
+
+        .resume-header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        .resume-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .resume-section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0d3b66;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .resume-section p {
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        ul {
+            list-style-position: inside;
+            list-style-type: disc;
+            color: #334155;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        /* Job & Education Titles */
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+
+        .item-date {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: #64748b;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        /* Bold markers for skills/projects */
+        .highlight {
+            font-weight: 700;
+            color: #0d3b66;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .resume-container {
+                padding: 2rem;
+            }
+            .item-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+    <main class="resume-container">
+        
+        <header class="resume-header">
+            <h1>Kenneth C. Sheek</h1>
+            <p>Clemmons, NC 27012 | 336-830-1377 | <a href="mailto:KennethSheek@outlook.com">KennethSheek@outlook.com</a> [cite: 33, 34]</p>
+        </header>
+
+        <section class="resume-section">
+            <h2>Summary</h2>
+            <p>Technical, flexible, and relationship-oriented MIS graduate who enjoys translating complex systems into clear, practical steps. [cite: 36] Currently contracted under an NDA with a major tech firm to develop new iterations of its flagship AI platform with improved personalization capabilities. [cite: 37] Experienced in automating data tasks and evaluating AI workflows. Comfortable partnering with management, sales, IT, engineering and customers to find solutions in business environments. [cite: 38]</p>
+        </section>
+
+        <section class="resume-section">
+            <h2>Core Competencies</h2>
+            <ul>
+                <li>Root-cause analysis; clear, reproducible defect documentation [cite: 40]</li>
+                <li>Productive communication with technical and business stakeholders [cite: 41]</li>
+                <li>Demos and proof-of-concept support; value and ROI framing for decision makers [cite: 42]</li>
+                <li>Data governance; HIPPA-aware practices, access controls, and policy-driven information handling [cite: 43]</li>
+                <li>Automation and scripting (PowerShell, Python) to streamline processing, reporting and handoffs [cite: 44]</li>
+                <li>Lifelong tech enthusiast with experience in industrial and recreational hardware solutions, data organization, cloud computing, programming, AI, server establishment, virtual computing and more [cite: 45]</li>
+            </ul>
+        </section>
+
+        <section class="resume-section">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><span class="highlight">Tools:</span> Python, PowerShell, SQL, Excel (Power Query), Tableau [cite: 50]</li>
+                <li><span class="highlight">Platforms:</span> Microsoft Azure, Azure AD, Hyper-V [cite: 51]</li>
+                <li><span class="highlight">Security:</span> Encryption, access controls, auditing / HIPAA-aware practices [cite: 52]</li>
+            </ul>
+        </section>
+
+        <section class="resume-section">
+            <h2>Professional Experience</h2>
+            
+            <div class="job">
+                <div class="item-header">
+                    <span class="item-title">Surge AI <span style="font-weight: 400; font-size: 0.95em; color: #64748b;">(Contracted under NDA to a major tech firm for AI development)</span></span> [cite: 54]
+                    <span class="item-date">Dec 2025 - Present</span> [cite: 55]
+                </div>
+                <span class="item-subtitle">AI Systems Debugger / Data Handling Evaluator</span> [cite: 55]
+                <ul>
+                    <li>Debugging experimental AI builds by testing data handling and personalization behaviors [cite: 56]</li>
+                    <li>Writing reproducible defect reports (steps, expected vs. actual, severity) and collaborating with contractors to isolate data leakage [cite: 57]</li>
+                    <li>Applying policy-driven evaluation rubrics to support safe, compliant handling of sensitive data and system instructions [cite: 58]</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Education</h2>
+            <div class="item-header">
+                <span class="item-title">East Carolina University College of Business, Greenville, NC</span> [cite: 47]
+                <span class="item-date">Aug 2022 - Dec 2025</span> [cite: 48]
+            </div>
+            <span class="item-subtitle">Bachelor of Science in Business Administration, Management Information Systems</span> [cite: 47]
+            <ul>
+                <li>Cum Laude | GPA: 3.6/4.0 | Dean’s List [cite: 47, 48]</li>
+            </ul>
+        </section>
+
+        <section class="resume-section">
+            <h2>Selected Projects</h2>
+            <ul>
+                <li><span class="highlight">HIPAA-aware Scheduling System (East Carolina University, 2025):</span> Team leader and head programmer for a desktop employee and client scheduler with encrypted storage; [cite: 60] packaged via PowerShell for standalone use [cite: 61]</li>
+                <li><span class="highlight">Six Flags Strategic Analysis Project (ECU College of Business, 2025):</span> Team leader in a project which analyzed a decade of data to identify trends in the profitability and operations of American theme parks; [cite: 62] PESTEL SWOT, and Five Forces frameworks were then implemented to inform strategic recommendations [cite: 63]</li>
+                <li><span class="highlight">CardMaker Design Suite (Recreational, Ongoing):</span> Sole developer of four interconnected Python programs working alongside .json data storage to professionally produce trading cards via a prototyping graphics editor, database compiler, batch image renderer, and printable sheet generator with native lanczos scaling [cite: 64]</li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
