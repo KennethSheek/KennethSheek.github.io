@@ -102,28 +102,24 @@
             transform: scale(1.05); /* Subtle zoom effect on hover */
         }
 
-        /* Centered Floating Text Pill */
+        /* Centered Text (Pill removed) */
         .card-title {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            font-size: 1.25rem;
+            font-size: 1.75rem;
             font-weight: 600;
-            color: #0d3b66; /* Deep blue to compliment the logo */
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            color: #ffffff; /* Crisp white text */
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Strong drop shadow for readability */
+            letter-spacing: 1px;
             transition: all 0.3s ease;
         }
 
         .nav-card:hover .card-title {
-            background: #ffffff;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            transform: translate(-50%, -50%) scale(1.05); /* Text pops slightly with the image */
+            text-shadow: 0 6px 16px rgba(0, 0, 0, 0.9);
         }
 
         /* Centered Bottom Footer */
@@ -210,7 +206,7 @@
 
     <header>
         <div class="logo-container">
-            <img src="KS logo.png" alt="Kenneth Sheek Technology Logo">
+            <img src="ks-logo.png" alt="Kenneth Sheek Technology Logo">
         </div>
     </header>
 
