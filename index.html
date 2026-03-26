@@ -129,42 +129,51 @@
             color: #cbd5e1;
         }
 
+        /* Easter Egg Styling */
+        .easter-egg {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            /* Starts hidden 100px below its final spot */
+            transform: translateX(-50%) translateY(100px); 
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: #e11d48; /* A nice subtle rose/red color */
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 30px rgba(225, 29, 72, 0.15);
+            opacity: 0;
+            /* Creates a slightly bouncy pop-up effect */
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            pointer-events: none; /* Prevents it from interfering with clicks */
+        }
+
+        /* The class applied by JavaScript to reveal the message */
+        .easter-egg.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
         @media (max-width: 850px) {
-            header {
-                padding: 1.5rem;
-            }
-            .logo-container {
-                width: 220px;
-            }
-            .construction-card {
-                padding: 2rem;
-            }
-            .construction-card h2 {
-                font-size: 1.75rem;
-            }
-            footer {
-                padding: 1.5rem;
-                font-size: 0.85rem;
-            }
-            .footer-content {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            .footer-row {
-                gap: 0.75rem;
-            }
-            .hide-mobile {
-                display: none;
-            }
+            header { padding: 1.5rem; }
+            .logo-container { width: 220px; }
+            .construction-card { padding: 2rem; }
+            .construction-card h2 { font-size: 1.75rem; }
+            footer { padding: 1.5rem; font-size: 0.85rem; }
+            .footer-content { flex-direction: column; gap: 0.75rem; }
+            .footer-row { gap: 0.75rem; }
+            .hide-mobile { display: none; }
         }
 
         @media (max-width: 480px) {
-            footer {
-                font-size: 0.75rem;
-            }
-            .footer-row {
-                gap: 0.5rem;
-            }
+            footer { font-size: 0.75rem; }
+            .footer-row { gap: 0.5rem; }
         }
     </style>
 </head>
@@ -196,6 +205,29 @@
             </div>
         </div>
     </footer>
+
+    <div id="love-message" class="easter-egg">
+        I love you, Lindsay &lt;3
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            // Check if the pressed key is 'L' (supports both uppercase and lowercase)
+            if (event.key === 'l' || event.key === 'L') {
+                const message = document.getElementById('love-message');
+                
+                // Only trigger if it isn't already showing
+                if (!message.classList.contains('show')) {
+                    message.classList.add('show');
+                    
+                    // Automatically hide it after 3.5 seconds
+                    setTimeout(() => {
+                        message.classList.remove('show');
+                    }, 3500);
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
