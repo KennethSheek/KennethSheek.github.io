@@ -34,9 +34,13 @@
             max-width: 850px;
             margin: 0 auto 2rem auto;
             width: 100%;
+            display: flex;
+            justify-content: space-between; /* Pushes buttons to opposite ends */
+            align-items: center;
         }
 
-        .back-btn {
+        /* Shared Button Styling */
+        .nav-btn {
             display: inline-flex;
             align-items: center;
             text-decoration: none;
@@ -50,10 +54,10 @@
             border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
-        .back-btn:hover {
+        .nav-btn:hover {
             color: #0d3b66;
             background: rgba(255, 255, 255, 0.9);
-            transform: translateX(-4px);
+            transform: translateY(-2px); /* A subtle upward float instead of sliding left */
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
@@ -243,7 +247,8 @@
 <body>
 
     <div class="nav-bar">
-        <a href="index.html" class="back-btn">← Back to Home</a>
+        <a href="index.html" class="nav-btn">← Back to Home</a>
+        <a href="Kenneth%20Sheek%20Resume.docx" download class="nav-btn">Download Resume ↓</a>
     </div>
 
     <main class="resume-container">
