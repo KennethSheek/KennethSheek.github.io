@@ -69,7 +69,7 @@
             background-color: rgba(0, 0, 0, 0.03);
         }
 
-        /* Center Content (Currently Blank) */
+        /* Center Content - Under Construction */
         main {
             flex: 1;
             display: flex;
@@ -77,6 +77,39 @@
             justify-content: center;
             width: 100%;
             padding: 0 2rem;
+        }
+
+        .construction-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .construction-card h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #0d3b66;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .construction-card p {
+            font-size: 1.1rem;
+            color: #64748b;
+            font-weight: 300;
+        }
+
+        /* Subtle floating animation for the center card */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         /* Centered Bottom Footer */
@@ -127,6 +160,12 @@
                 font-size: 1rem;
                 padding: 0.5rem;
             }
+            .construction-card {
+                padding: 2rem;
+            }
+            .construction-card h2 {
+                font-size: 1.75rem;
+            }
             footer {
                 bottom: 1.5rem;
                 font-size: 0.85rem;
@@ -163,7 +202,11 @@
     </header>
 
     <main>
-        </main>
+        <div class="construction-card">
+            <h2>Under Construction</h2>
+            <p>New projects and updates coming soon.</p>
+        </div>
+    </main>
 
     <footer>
         <div class="footer-line">
