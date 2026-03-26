@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            /* Seamless blend background with the logo image, with a subtle grain texture (reminder to fix logo with alpha transparency later)*/
+            /* Seamless blend background with the logo image, with a subtle grain texture */
             background-color: #F4F7FB;
             background-image: 
                 linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px),
@@ -23,7 +23,7 @@
             background-position: center;
             color: #1e293b;
             
-            /* Changed to dynamic viewport height and natural flex stacking to fix mobile clipping */
+            /* Dynamic viewport height and natural flex stacking */
             min-height: 100vh;
             min-height: 100dvh; 
             display: flex;
@@ -31,12 +31,12 @@
             overflow: hidden; /* Prevents scrolling */
         }
 
-        /* Top Header*/
+        /* Top Header (Logo Only) */
         header {
             width: 100%;
             padding: 2rem 3rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             z-index: 10;
         }
@@ -52,23 +52,7 @@
             display: block;
         }
 
-        .header-nav a {
-            text-decoration: none;
-            color: #1e293b;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-        }
-
-        .header-nav a:hover {
-            color: #0d3b66;
-            background-color: rgba(0, 0, 0, 0.03);
-        }
-
-        /* Center Content */
+        /* Center Content - Flexes to take up remaining space */
         main {
             flex: 1;
             display: flex;
@@ -110,7 +94,7 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Centered Footer */
+        /* Centered Bottom Footer */
         footer {
             width: 100%;
             display: flex;
@@ -122,21 +106,27 @@
             z-index: 10;
         }
 
-        .footer-line {
+        /* Desktop Layout: One long row */
+        .footer-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap; 
             gap: 1.5rem;
         }
 
-        .footer-line a {
+        .footer-row {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-row a {
             color: #64748b;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        .footer-line a:hover {
+        .footer-row a:hover {
             color: #0d3b66;
         }
 
@@ -145,16 +135,12 @@
         }
 
         /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             header {
                 padding: 1.5rem;
             }
             .logo-container {
                 width: 220px;
-            }
-            .header-nav a {
-                font-size: 1rem;
-                padding: 0.5rem;
             }
             .construction-card {
                 padding: 2rem;
@@ -166,21 +152,31 @@
                 padding: 1.5rem;
                 font-size: 0.85rem;
             }
-            .footer-line {
-                gap: 1rem;
+            
+            /* Stacks the two groups into top/bottom rows */
+            .footer-content {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            /* Keeps the pairs side-by-side */
+            .footer-row {
+                gap: 0.75rem;
+            }
+            
+            /* Hides the middle pipe that connects the two groups on desktop */
+            .hide-mobile {
+                display: none;
             }
         }
 
         @media (max-width: 480px) {
-            .footer-line {
-                flex-direction: column; /* Stacks items neatly on small screens */
+            /* Slight font size reduction to ensure long emails fit on very narrow screens */
+            footer {
+                font-size: 0.75rem;
+            }
+            .footer-row {
                 gap: 0.5rem;
-            }
-            .footer-separator {
-                display: none; 
-            }
-            .footer-line span, .footer-line a {
-                text-align: center;
             }
         }
     </style>
@@ -191,9 +187,6 @@
         <div class="logo-container">
             <img src="ks-logo.png" alt="Kenneth Sheek Technology Logo">
         </div>
-        <nav class="header-nav">
-            <a href="resume.html">Resume</a>
-        </nav>
     </header>
 
     <main>
@@ -204,12 +197,20 @@
     </main>
 
     <footer>
-        <div class="footer-line">
-            <span>Clemmons, NC</span>
-            <span class="footer-separator">|</span>
-            <a href="mailto:KennethSheek@outlook.com">KennethSheek@outlook.com</a>
-            <span class="footer-separator">|</span>
-            <a href="https://www.linkedin.com/in/kenneth-sheek/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="footer-content">
+            <div class="footer-row">
+                <span>Clemmons, NC</span>
+                <span class="footer-separator">|</span>
+                <a href="mailto:KennethSheek@outlook.com">KennethSheek@outlook.com</a>
+            </div>
+            
+            <span class="footer-separator hide-mobile">|</span>
+            
+            <div class="footer-row">
+                <a href="https://www.linkedin.com/in/kenneth-sheek/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <span class="footer-separator">|</span>
+                <a href="resume.html">My Resume</a>
+            </div>
         </div>
     </footer>
 
