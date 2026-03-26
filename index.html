@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            /* Seamless blend background with the logo image, with a subtle grain texture */
+            /* Seamless blend background with the logo image, with a subtle grain texture (reminder to fix logo with alpha transparency later)*/
             background-color: #F4F7FB;
             background-image: 
                 linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px),
@@ -31,7 +31,7 @@
             overflow: hidden; /* Prevents scrolling */
         }
 
-        /* Top Header (Now naturally flows at the top) */
+        /* Top Header*/
         header {
             width: 100%;
             padding: 2rem 3rem;
@@ -68,7 +68,7 @@
             background-color: rgba(0, 0, 0, 0.03);
         }
 
-        /* Center Content - Flexes to take up remaining space */
+        /* Center Content */
         main {
             flex: 1;
             display: flex;
@@ -110,7 +110,7 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Centered Bottom Footer (Now naturally flows at the bottom) */
+        /* Centered Footer */
         footer {
             width: 100%;
             display: flex;
@@ -173,7 +173,7 @@
 
         @media (max-width: 480px) {
             .footer-line {
-                flex-direction: column; /* Stacks items neatly on very small screens */
+                flex-direction: column; /* Stacks items neatly on small screens */
                 gap: 0.5rem;
             }
             .footer-separator {
