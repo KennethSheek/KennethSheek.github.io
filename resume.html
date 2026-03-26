@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Kenneth C. Sheek</title>
+    <link rel="icon" type="image/png" href="ks-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -22,14 +23,17 @@
             background-position: center;
             color: #1e293b;
             line-height: 1.6;
-            padding: 2rem;
-            /* Scrolling is enabled here, unlike the index page */
+            padding: 2rem 2rem 0 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Navigation */
         .nav-bar {
             max-width: 850px;
             margin: 0 auto 2rem auto;
+            width: 100%;
         }
 
         .back-btn {
@@ -56,12 +60,14 @@
         /* Resume Document Container */
         .resume-container {
             max-width: 850px;
+            width: 100%;
             margin: 0 auto;
             background: #ffffff;
             padding: 4rem;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid rgba(0,0,0,0.03);
+            flex: 1; /* Pushes the footer down */
         }
 
         /* Header Section */
@@ -155,22 +161,81 @@
             display: block;
         }
 
-        /* Bold markers for skills/projects */
         .highlight {
             font-weight: 700;
             color: #0d3b66;
         }
 
+        /* Consistent Footer Styles */
+        footer {
+            width: 100%;
+            display: flex;
+            justify-content: center; 
+            padding: 3rem 2rem 2rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #64748b;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-row {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-row a {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-row a:hover {
+            color: #0d3b66;
+        }
+
+        .footer-separator {
+            color: #cbd5e1;
+        }
+
         /* Responsive Design */
+        @media (max-width: 850px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            .footer-row {
+                gap: 0.75rem;
+            }
+            .hide-mobile {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             body {
-                padding: 1rem;
+                padding: 1rem 1rem 0 1rem;
             }
             .resume-container {
                 padding: 2rem;
             }
             .item-header {
                 flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                font-size: 0.75rem;
+            }
+            .footer-row {
+                gap: 0.5rem;
             }
         }
     </style>
@@ -253,6 +318,22 @@
         </section>
 
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-row">
+                <span>Clemmons, NC</span>
+                <span class="footer-separator">|</span>
+                <a href="mailto:KennethSheek@outlook.com">KennethSheek@outlook.com</a>
+            </div>
+            <span class="footer-separator hide-mobile">|</span>
+            <div class="footer-row">
+                <a href="https://www.linkedin.com/in/kenneth-sheek/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <span class="footer-separator">|</span>
+                <a href="resume.html">My Resume</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
